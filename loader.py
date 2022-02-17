@@ -32,4 +32,4 @@ else:
 
 print("starting server...")
 subprocess.call(["sudo", "java", "-jar", file_name])
-subprocess.call(["sudo", "poweroff"])
+# subprocess.call(["sudo", "poweroff"])
