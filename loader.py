@@ -18,7 +18,7 @@ for release in res:
         RELEASE = release
 
 print("found release -> "+RELEASE.get("name"))
-file_name = home + RELEASE.get("tag_name").replace(".", "_")+".jar"
+file_name = home +"/"+ RELEASE.get("tag_name").replace(".", "_")+".jar"
 if not os.path.isfile(file_name):
     for assets in RELEASE.get("assets"):
         if assets.get("name").startswith("server"):
