@@ -31,5 +31,5 @@ else:
     print("already up to date")
 
 print("starting server...")
-subprocess.call(["java", "-jar", file_name])
+subprocess.call(["sudo", "java", "-jar", file_name])
 subprocess.call(["sudo", "poweroff"])
