@@ -23,7 +23,7 @@ if not os.path.isfile(file_name):
     for assets in RELEASE.get("assets"):
         if assets.get("name").startswith("server"):
             print("server file found")
-            subprocess.call(["https", "--follow", "-o", file_name, assets.get("browser_download_url")])
+            subprocess.call(["python3", "-m", "httpie", "get", "--follow", "-o", file_name, assets.get("browser_download_url")])
             break
     print("finished download")
 
