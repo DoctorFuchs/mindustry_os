@@ -18,12 +18,12 @@ for release in res:
         RELEASE = release
 
 print("found release -> "+RELEASE.get("name"))
-file_name = home +"/"+ RELEASE.get("tag_name").replace(".", "_")+".jar"
+file_name = home + os.sep+"mindustry_os"+os.sep+ RELEASE.get("tag_name").replace(".", "_")+".jar"
 if not os.path.isfile(file_name):
     for assets in RELEASE.get("assets"):
         if assets.get("name").startswith("server"):
             print("server file found")
-            subprocess.call(["python3", "-m", "httpie", "get", "--follow", "--output="+file_name, assets.get("browser_download_url")])
+            subprocess.call(["wget", "-O"+file_name, assets.get("browser_download_url")])
             break
     print("finished download")
 
